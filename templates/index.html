@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Tracing</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 * {
   margin: 0;
@@ -150,24 +152,28 @@ h1 em {
     height: 5px;
   background-color:#f8f8f8;
 }
-
-
-
+.lead{
+  color: beige;
+}
 </style>
+</head>
 <body>
-<form action="{{ url_for('get_infected')}}" method="post">
-<div class="demo">
-	<div class="heading">
-	<h1>CONTACT TRACING<span>Predicting Disease Outbreaks</span></h1>
-	</div>
-	<br>
-	<div class="input">
-    <input class="input__inner" type="text" name="fname" id="fname" placeholder="Enter the name here!">
-    <span class="input__border"></span>
-	
-	</div>
-	<button>Check</button>
+<div class="container-fluid">
+  <form action="{{ url_for('get_infected')}}" method="post">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="text-center mb-4">
+          <h1 class="display-4">CONTACT TRACING</h1>
+          <p class="lead">Predicting Disease Outbreaks</p>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter the name here!">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Check</button>
+      </div>
+    </div>
+  </form>
 </div>
-</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
